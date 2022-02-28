@@ -11,8 +11,11 @@
         protected array $cart;
         private bool $registered = false;
         
-        function __construct($_cardNumber, $_cardOwner, $_cardExpireDate)
+        function __construct($_name,$_surname,$_email,$_cardNumber, $_cardOwner, $_cardExpireDate)
         {
+            $this->setName($_name);
+            $this->setName($_surname);
+            $this->setName($_email);
             $this->debitCard=new DebitCard($_cardNumber, $_cardOwner, $_cardExpireDate);
         }
         private function getDiscount() {
