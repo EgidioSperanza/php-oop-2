@@ -1,15 +1,20 @@
 <?php
+    require_once "debitCards.php";
+
     class User {
         protected string $name;
         protected string $surname;
         protected string $email;
         protected int $telephone;
         protected array $address;
-        protected array $debitCard;
+        protected $debitCard;
         protected array $cart;
         private bool $registered = false;
         
-
+        function __construct($_cardNumber, $_cardOwner, $_cardExpireDate)
+        {
+            $this->debitCard=new DebitCard($_cardNumber, $_cardOwner, $_cardExpireDate);
+        }
         private function getDiscount() {
             if ($this->registered){
                 return 20;

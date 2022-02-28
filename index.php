@@ -5,10 +5,8 @@
     require_once __DIR__ . "/classes/foods.php";
 
     require_once __DIR__ . "/classes/users.php";
-    require_once __DIR__ . "/classes/debitCards.php";
 
-    var_dump(new User());
-    var_dump(new DebitCard(123456789,"John Doe", "2024/02/02"));
+    var_dump(new User(123456789,"John Doe", "2024/02/02"));
 
     var_dump(new Product());
     var_dump(new Perishable());
