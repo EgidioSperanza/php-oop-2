@@ -3,9 +3,16 @@
         private string $code;
         private string $name;
         private string $description;
-        private string $category;
-        private int $price;
-        private array $whichAnimal;
+        private float $price;
+        private string $whichAnimal;
+
+        function __construct($_name, $_description,$_price, $_whichAnimal)
+        {
+            $this->setName($_name);
+            $this->setDescription($_description);
+            $this->setPrice($_price);
+            $this->setWhichAnimal($_whichAnimal);
+        }
 
         /**
          * Get the value of code
@@ -20,7 +27,7 @@
          *
          * @return  self
          */ 
-        public function setCode($code)
+        private function setCode($code)
         {
                 $this->code = $code;
 
@@ -63,26 +70,6 @@
         public function setDescription($description)
         {
                 $this->description = $description;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of category
-         */ 
-        public function getCategory()
-        {
-                return $this->category;
-        }
-
-        /**
-         * Set the value of category
-         *
-         * @return  self
-         */ 
-        public function setCategory($category)
-        {
-                $this->category = $category;
 
                 return $this;
         }

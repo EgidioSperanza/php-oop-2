@@ -1,21 +1,25 @@
 <?php
-    require_once "debitCards.php";
     require_once "addresses.php";
+    require_once "debitCards.php";
 
     class User {
         private string $name;
         private string $surname;
         private string $email;
         private int $telephone;
+        private Address $address;
+        private DebitCard $debitCard;
         private array $cart;
         private bool $registered = false;
         
-        function __construct($_name,$_surname,$_email,$_telephone)
+        function __construct($_name,$_surname,$_email,$_telephone,$_street, $_zipCode, $_city,$_number, $_owner, $_expireDate)
         {
             $this->setName($_name);
             $this->setSurname($_surname);
             $this->setEmail($_email);
             $this->setTelephone($_telephone);
+            $this->setAddress(new Address($_street, $_zipCode, $_city));
+            $this->setDebitCard(new DebitCard($_number, $_owner, $_expireDate));
         }
         private function getDiscount() {
             if ($this->registered){
@@ -105,26 +109,6 @@
         }
 
         /**
-         * Get the value of debitCard
-         */ 
-        public function getDebitCard()
-        {
-                return $this->debitCard;
-        }
-
-        /**
-         * Set the value of debitCard
-         *
-         * @return  self
-         */ 
-        public function setDebitCard($debitCard)
-        {
-                $this->debitCard = $debitCard;
-
-                return $this;
-        }
-
-        /**
          * Get the value of registered
          */ 
         public function getRegistered()
@@ -160,6 +144,46 @@
         public function setCart($cart)
         {
                 $this->cart = $cart;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of address
+         */ 
+        public function getAddress()
+        {
+                return $this->address;
+        }
+
+        /**
+         * Set the value of address
+         *
+         * @return  self
+         */ 
+        public function setAddress($address)
+        {
+                $this->address = $address;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of debitCard
+         */ 
+        public function getDebitCard()
+        {
+                return $this->debitCard;
+        }
+
+        /**
+         * Set the value of debitCard
+         *
+         * @return  self
+         */ 
+        public function setDebitCard($debitCard)
+        {
+                $this->debitCard = $debitCard;
 
                 return $this;
         }
