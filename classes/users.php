@@ -2,13 +2,13 @@
     require_once "debitCards.php";
 
     class User {
-        protected string $name;
-        protected string $surname;
-        protected string $email;
-        protected int $telephone;
-        protected string $address;
-        protected $debitCard;
-        protected array $cart;
+        private string $name;
+        private string $surname;
+        private string $email;
+        private int $telephone;
+        private string $address;
+        private $debitCard;
+        private array $cart;
         private bool $registered = false;
         
         function __construct($_name,$_surname,$_email,$_telephone,string $_street, string $_city, int $_zipCode,$_cardNumber, $_cardOwner, $_cardExpireDate)
@@ -30,7 +30,7 @@
         /**
          * Get the value of name
          */ 
-        public function getName()
+        private function getName()
         {
                 return $this->name;
         }
@@ -50,7 +50,7 @@
         /**
          * Get the value of surname
          */ 
-        public function getSurname()
+        private function getSurname()
         {
                 return $this->surname;
         }
@@ -70,7 +70,7 @@
         /**
          * Get the value of email
          */ 
-        public function getEmail()
+        private function getEmail()
         {
                 return $this->email;
         }
@@ -90,7 +90,7 @@
         /**
          * Get the value of telephone
          */ 
-        public function getTelephone()
+        private function getTelephone()
         {
                 return $this->telephone;
         }
@@ -110,7 +110,7 @@
         /**
          * Get the value of address
          */ 
-        public function getAddress()
+        private function getAddress()
         {
                 return $this->address;
         }

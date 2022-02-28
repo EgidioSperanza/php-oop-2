@@ -1,11 +1,11 @@
 <?php
     class Product {
-        protected string $code;
-        protected string $name;
-        protected string $description;
-        protected string $category;
-        protected int $price;
-        protected array $whichAnimal;
+        private string $code;
+        private string $name;
+        private string $description;
+        private string $category;
+        private int $price;
+        private array $whichAnimal;
 
         /**
          * Get the value of code
