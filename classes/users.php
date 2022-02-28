@@ -1,6 +1,6 @@
 <?php
-    require_once "addresses.php";
-    require_once "debitCards.php";
+    require_once __DIR__ . "/addresses.php";
+    require_once __DIR__ . "/debitCards.php";
 
     class User {
         private string $name;
@@ -10,7 +10,7 @@
         private Address $address;
         private DebitCard $debitCard;
         private array $cart;
-        private bool $registered = false;
+        private bool $registered = true;
         
         function __construct($_name,$_surname,$_email,$_telephone,$_street, $_zipCode, $_city,$_number, $_owner, $_expireDate)
         {
@@ -20,13 +20,6 @@
             $this->setTelephone($_telephone);
             $this->setAddress(new Address($_street, $_zipCode, $_city));
             $this->setDebitCard(new DebitCard($_number, $_owner, $_expireDate));
-        }
-        private function getDiscount() {
-            if ($this->registered){
-                return 20;
-            }
-
-            return 0;
         }
         /**
          * Get the value of name

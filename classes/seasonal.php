@@ -1,5 +1,5 @@
 <?php
-    require_once "seasonal.php";
+    require_once __DIR__ . "/seasonal.php";
 
     class Seasonal extends Product {
         protected string $fromDate;

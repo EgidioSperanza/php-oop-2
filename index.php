@@ -5,14 +5,17 @@
     require_once __DIR__ . "/classes/foods.php";
 
     require_once __DIR__ . "/classes/users.php";
+    require_once __DIR__ . "/classes/carts.php";
 
     // var_dump(new User("John", "Doe", "JohnDoe@gmail.it",3403405665),new Address("Via Roma", 83036, "Roma"), new DebitCard(123456789, "John Doe","2024/02/02"));
-    $user=(new User("John", "Doe", "JohnDoe@gmail.it",3403405665,"Via Roma", "Roma", 83036,123456789,"John Doe", "2024/02/02"));
+    $user=new User("John", "Doe", "JohnDoe@gmail.it",3403405665,"Via Roma", "Roma", 83036,123456789,"John Doe", "2024/02/02");
     var_dump($user);
-    $food=(new Food("Scatoletta Carne", "Descrizione della scatoletta e dei bocconcini di carne", 3.59, "Dog","2020/02/02"));
+    $food=new Food("Scatoletta Carne", "Descrizione della scatoletta e dei bocconcini di carne", 3.59, "Dog","2020/02/02");
     var_dump($food);
-    $antiFlea=(new Seasonal("Collare Antipulci", "tiene lontano pucci e zecche e aiuta la prevenzione dalla lesmaniosi...", 7.30, "Dog", "2022/03/03", "2022/06/06"));
+    $antiFlea=new Seasonal("Collare Antipulci", "tiene lontano pucci e zecche e aiuta la prevenzione dalla lesmaniosi...", 7.30, "Dog", "2022/03/03", "2022/06/06");
     var_dump($antiFlea);
+    $cart=new Cart([$food, $antiFlea], $user);
+    var_dump($cart);
 ?>
 <!DOCTYPE html>
 <html lang="en">

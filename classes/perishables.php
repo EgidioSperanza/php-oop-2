@@ -1,5 +1,5 @@
 <?php
-    require_once "products.php";
+    require_once __DIR__ . "/products.php";
 
     class Perishable extends Product {
         private string $expiration;

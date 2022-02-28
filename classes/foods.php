@@ -1,5 +1,5 @@
 <?php
-    require_once "perishables.php";
+    require_once __DIR__ . "/perishables.php";
 
     class Food extends Perishable {
 
