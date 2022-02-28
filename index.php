@@ -6,7 +6,7 @@
 
     require_once __DIR__ . "/classes/users.php";
 
-    var_dump(new User("John", "Doe", "JohnDoe@gmail.it",3403405665,"Via Roma", "Roma", 83036,123456789,"John Doe", "2024/02/02"));
+    var_dump(new User("John", "Doe", "JohnDoe@gmail.it",3403405665),new Address("Via Roma", 83036, "Roma"), new DebitCard(123456789, "John Doe","2024/02/02"));
 
     var_dump(new Product());
     var_dump(new Perishable());
