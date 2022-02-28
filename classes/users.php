@@ -10,7 +10,7 @@
         private Address $address;
         private DebitCard $debitCard;
         private array $cart;
-        private bool $registered = true;
+        private bool $registered = false;
         
         function __construct($_name,$_surname,$_email,$_telephone,$_street, $_zipCode, $_city,$_number, $_owner, $_expireDate)
         {

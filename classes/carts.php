@@ -1,19 +1,24 @@
-<?php 
-require_once __DIR__ . "/users.php";
+<?php
+require_once __DIR__ . '/users.php';
+require_once __DIR__ . '/foods.php';
+require_once __DIR__ . '/seasonal.php';
+require_once __DIR__ . '/perishables.php';
 
-class Cart {
+class Cart
+{
     private array $shoppedItems;
-    protected float $amount=0;
+    protected float $amount = 0;
 
-    function __construct($_shopped, $_user) {
+    function __construct($_shopped, $_user)
+    {
         $this->setShoppedItems($_shopped);
-
 
         $this->getAmount($_shopped, $_user);
     }
     /**
      * Get the value of shoppedItems
-     */ 
+     */
+
     public function getShoppedItems()
     {
         return $this->shoppedItems;
@@ -23,7 +28,8 @@ class Cart {
      * Set the value of shoppedItems
      *
      * @return  self
-     */ 
+     */
+
     public function setShoppedItems($shoppedItems)
     {
         $this->shoppedItems = $shoppedItems;
@@ -33,17 +39,18 @@ class Cart {
 
     /**
      * Get the value of amount
-     */ 
+     */
+
     public function getAmount($_shopped, $_user)
     {
-        foreach($_shopped as $item) {
+        foreach ($_shopped as $item) {
             $this->amount += $item->getPrice();
-        };
+        }
 
         if ($_user->getRegistered()) {
             $this->amount = $this->amount * 0.8;
         }
-        return $this->amount=round($this->amount, 2);
+        return $this->amount = round($this->amount, 2);
     }
 }
 ?>

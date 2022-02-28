@@ -26,9 +26,9 @@
         {
             if($expiration > date("Y/m/d")){
                 $this->expiration = $expiration;
-
-                return $this;
+                return $this->expiration;
             }else{
+                $this->setPrice(0);
                 return $this->expiration="PRODOTTO SCADUTO IN ATTESA DI RITIRO E/O DISTRUZIONE";
             }
 

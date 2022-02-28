@@ -72,6 +72,7 @@
             if(date("Y/m/d")>$this->fromDate && date("Y/m/d")<$this->toDate){
                 return $this->availability="Prodotto Disponibile per l'acquisto";
             }else{
+                $this->setPrice(0);
                 return $this->availability="Il Prodotto Tornerà disponibile il ".$this->fromDate;
             }
         }
