@@ -1,8 +1,4 @@
 <?php
-require_once __DIR__ . '/users.php';
-require_once __DIR__ . '/foods.php';
-require_once __DIR__ . '/seasonal.php';
-require_once __DIR__ . '/perishables.php';
 
 class Cart
 {
