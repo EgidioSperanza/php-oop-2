@@ -8,6 +8,7 @@
 
         function __construct($_name, $_description,$_price, $_whichAnimal)
         {
+            $this->code = uniqid() ;
             $this->setName($_name);
             $this->setDescription($_description);
             $this->setPrice($_price);
